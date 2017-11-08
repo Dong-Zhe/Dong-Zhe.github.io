@@ -9,13 +9,13 @@ url: "https://dong-zhe.github.io" # the base hostname & protocol for your site, 
 
 # Author Settings
 author: 董喆 # add your name
-author-img: david-freeman.jpg # add your photo
+author-img: head.jpg # add your photo
 about-author: 软件工程师. # add description
 twitter: # add your Twitter handle
 facebook: # add your Facebook handle
 github: https://github.com/Dong-Zhe # add your Github handle
-linkedin: # add your Linkedin handle
-email: tju_dongzhe@163.com# add your Email address
+linkedin: https://www.linkedin.com/in/zhe-dong-07769910b/
+email: tju_dongzhe@163.com
 
 # Disqus
 discus-identifier: # add your discus identifier
