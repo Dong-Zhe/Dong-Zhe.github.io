@@ -3,7 +3,7 @@ layout: post
 title: MySql架构概述
 date: 2017-11-14 23:46:00 +0300
 description: MySql与传统数据的区别在于存储引擎架构。MySql是三层架构，最上层是连接层，包括安全认证、授权等功能
-img: mysql.jpg 
+img: 
 tags: [数据库, 后台开发]
 ---
 
