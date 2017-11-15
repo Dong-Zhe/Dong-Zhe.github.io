@@ -1,19 +1,44 @@
 ---
-layout: main
+layout: index
+title: "强学力行、顺势而为"
 ---
+
+<!-- Loop output paged posts -->
 {% for post in paginator.posts %}
-<article class="post">
-  {% if post.img %}
-    <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
-  {% else %}
-  {% endif %}
-  <div class="post-content">
-    <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-    <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
-    <span class="post-date">{{post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: " minute read" }}{% endunless %}</span>
+<h2>
+  <a href="{{ post.url }}">
+    {{ post.title }}
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	{{ post.date | date:"%Y-%m-%d" }}
   </div>
-</article>
+</h2>
+<hr>
+{{ post.excerpt }}
+	<p><h3><a href="{{ post.url }}">阅读全文 &raquo;</a></h3></p>
+<hr>
 {% endfor %}
 
-{% include pagination.html %}
+<!-- Pager indicator -->
+<ul class="pager">
+  {% if paginator.previous_page %} {% if paginator.previous_page == 1 %}
+  <li class="previous">
+    <a href="/">
+      &larr; 上一页
+    </a>
+  </li>
+  {% else %}
+  <li class="previous">
+    <a href="/posts/page{{ paginator.previous_page }}/index.html">
+      &larr; 上一页
+    </a>
+  </li>
+  {% endif %} {% endif %} {% if paginator.next_page %}
+  <li class="next">
+    <a href="/posts/page{{ paginator.next_page }}/index.html">
+      下一页 &rarr;
+    </a>
+  </li>
+  {% endif %}
+</ul>
